@@ -16,7 +16,6 @@ Signed-off-by: Thomas Petazzoni <thomas.petazzoni@free-electrons.com>
 ---
  ldso/ldso/arm/dl-startup.h            |  2 +-
  ldso/ldso/arm/resolve.S               |  1 +
- libc/string/arm/_memcpy.S             |  1 +
  libc/string/arm/memcmp.S              |  1 +
  libc/string/arm/memset.S              |  1 +
  libc/string/arm/strcmp.S              |  1 +
@@ -57,18 +56,6 @@ index 08889d0..600d3af 100644
  
  #include <features.h>
  
-diff --git a/libc/string/arm/_memcpy.S b/libc/string/arm/_memcpy.S
-index b26080d..c59f5b8 100644
---- a/libc/string/arm/_memcpy.S
-+++ b/libc/string/arm/_memcpy.S
-@@ -40,6 +40,7 @@
- #include <features.h>
- #include <endian.h>
- #include <bits/arm_asm.h>
-+#include <bits/arm_bx.h>
- 
- #if !defined(THUMB1_ONLY)
- /*
 diff --git a/libc/string/arm/memcmp.S b/libc/string/arm/memcmp.S
 index 65409f4..9f78415 100644
 --- a/libc/string/arm/memcmp.S
